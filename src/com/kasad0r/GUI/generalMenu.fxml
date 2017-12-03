@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="567.0" prefWidth="1395.0" stylesheets="@style/style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kasad0r.GUI.generalMenuController">
+    <children>
+        <MenuBar fx:id="menuBar" prefHeight="32.0" prefWidth="1395.0" styleClass="card-unpadded">
+            <menus>
+                <Menu mnemonicParsing="false" text="Основные">
+                    <items>
+                  <MenuItem fx:id="addToDataBase" mnemonicParsing="false" text="Добавить в базу данных" />
+                  <MenuItem fx:id="MenuItemListFromDB" mnemonicParsing="false" onAction="#goToListFromDB" text="Список пациентов" />
+                  <MenuItem fx:id="clearTable" mnemonicParsing="false" onAction="#pressedButton" text="Очистить таблицу" />
+                        <MenuItem fx:id="MenuItemClose" mnemonicParsing="false" onAction="#exit" text="Выйти" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Помощь">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="О программе" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <GridPane alignment="TOP_RIGHT" layoutX="33.0" layoutY="174.0" prefHeight="317.0" prefWidth="316.0" styleClass="card-subtitle">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="223.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="159.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="R-R:" GridPane.rowIndex="2" />
+                <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="P-Q:" GridPane.rowIndex="3" />
+                <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="Q-T:" GridPane.rowIndex="4" />
+                <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="P:" GridPane.rowIndex="5" />
+                <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="QRS:" GridPane.rowIndex="6" />
+                <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="ЧСС:" GridPane.rowIndex="7" />
+                <TextField fx:id="RR" prefHeight="95.0" prefWidth="109.0" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="PQ" prefHeight="0.0" prefWidth="109.0" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="QT" prefHeight="38.0" prefWidth="153.0" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="P" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <TextField fx:id="QRS" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <TextField fx:id="heartRate" promptText="уд/мин" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Label text="Систематичечкий показатель:" GridPane.rowIndex="8" />
+                <Label text="Угол отклонения ЭОС:" />
+                <Label prefHeight="29.0" prefWidth="284.0" text="Колебания прод. интрвла R-R:" GridPane.rowIndex="1" />
+                <TextField fx:id="systematicIndicator" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <TextField fx:id="intervalRR" promptText="\%" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="angleDeviationEOS" prefHeight="51.0" prefWidth="138.0" promptText="град." GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+        <GridPane layoutX="33.0" layoutY="40.0" prefHeight="123.0" prefWidth="316.0" styleClass="card-subtitle">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="122.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="194.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="ФИО" />
+                <Label text="Дата:" GridPane.rowIndex="1" />
+                <Label text="Дата рождения:" GridPane.rowIndex="2" />
+                <DatePicker fx:id="dateAnalysis" prefHeight="31.0" prefWidth="257.0" styleClass="jfx-hamburger" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="FullName" prefHeight="31.0" prefWidth="150.0" promptText="А.А Васильев" styleClass="resize-border" GridPane.columnIndex="1" />
+                <DatePicker fx:id="BirthdayDate" prefHeight="31.0" prefWidth="350.0" styleClass="jfx-hamburger" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <Button fx:id="buttonResault" layoutX="221.0" layoutY="501.0" mnemonicParsing="false" onAction="#pressedButton" prefHeight="38.0" prefWidth="128.0" styleClass="drawer-buttons" text="Результат" />
+        <GridPane layoutX="381.0" layoutY="163.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label disable="true" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="99.0" text="I" GridPane.rowIndex="1" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="95.0" text="II" GridPane.rowIndex="2" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="97.0" text="III" GridPane.rowIndex="3" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="96.0" text="AVR" GridPane.rowIndex="4" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="96.0" text="AVL" GridPane.rowIndex="5" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="96.0" text="AVF" GridPane.rowIndex="6" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="93.0" text="V1" GridPane.rowIndex="7" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="94.0" text="V2" GridPane.rowIndex="8" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="94.0" text="V3" GridPane.rowIndex="9" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="93.0" text="V4" GridPane.rowIndex="10" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="96.0" text="V5" GridPane.rowIndex="11" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="101.0" text="P+" GridPane.columnIndex="1" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="99.0" text="P-" GridPane.columnIndex="2" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="105.0" text="Q" GridPane.columnIndex="3" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="99.0" text="R" GridPane.columnIndex="4" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="99.0" text="R1" GridPane.columnIndex="5" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="105.0" text="S" GridPane.columnIndex="6" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="115.0" text="T+" GridPane.columnIndex="7" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="101.0" text="T-" GridPane.columnIndex="8" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="109.0" text="ST" GridPane.columnIndex="9" />
+                <Label alignment="TOP_CENTER" disable="true" opacity="0.58" prefHeight="21.0" prefWidth="96.0" text="V6" GridPane.rowIndex="12" />
+                <TextField fx:id="I_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="II_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="III_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="AVR_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="AVL_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <TextField fx:id="AVF__Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <TextField fx:id="V1_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <TextField fx:id="V2_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <TextField fx:id="V3_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <TextField fx:id="V4_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                <TextField fx:id="V5_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                <TextField fx:id="V6_Pplus" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                <TextField fx:id="I_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="II_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="III_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <TextField fx:id="AVR_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <TextField fx:id="AVL_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <TextField fx:id="AVF_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <TextField fx:id="V1_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <TextField fx:id="V2_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <TextField fx:id="V3_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                <TextField fx:id="V4_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                <TextField fx:id="V5_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                <TextField fx:id="V6_Pminus" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                <TextField fx:id="I_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <TextField fx:id="II_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <TextField fx:id="III_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <TextField fx:id="AVR_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <TextField fx:id="AVL_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                <TextField fx:id="AVF_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                <TextField fx:id="V1_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                <TextField fx:id="V2_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                <TextField fx:id="V3_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                <TextField fx:id="V4_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                <TextField fx:id="V5_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                <TextField fx:id="V6_Q" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                <TextField fx:id="V6_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+                <TextField fx:id="V6_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="12" />
+                <TextField fx:id="V6_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+                <TextField fx:id="V6_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+                <TextField fx:id="V6_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="12" />
+                <TextField fx:id="V6_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="12" />
+                <TextField fx:id="V5_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="11" />
+                <TextField fx:id="V4_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+                <TextField fx:id="V3_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="9" />
+                <TextField fx:id="V2_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+                <TextField fx:id="V1_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="7" />
+                <TextField fx:id="AVF_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+                <TextField fx:id="AVL_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+                <TextField fx:id="AVR_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                <TextField fx:id="III_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+                <TextField fx:id="II_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                <TextField fx:id="I_ST" disable="true" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                <TextField fx:id="I_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <TextField fx:id="I_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <TextField fx:id="I_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <TextField fx:id="I_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                <TextField fx:id="I_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                <TextField fx:id="II_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <TextField fx:id="III_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                <TextField fx:id="AVR_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <TextField fx:id="AVL_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                <TextField fx:id="AVF_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                <TextField fx:id="V1_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                <TextField fx:id="V2_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                <TextField fx:id="V3_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                <TextField fx:id="V4_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                <TextField fx:id="V5_R" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+                <TextField fx:id="V5_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="11" />
+                <TextField fx:id="V5_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="11" />
+                <TextField fx:id="V5_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="11" />
+                <TextField fx:id="V5_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="11" />
+                <TextField fx:id="II_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                <TextField fx:id="II_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                <TextField fx:id="II_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                <TextField fx:id="II_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                <TextField fx:id="III_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                <TextField fx:id="III_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                <TextField fx:id="III_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                <TextField disable="true" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+                <TextField fx:id="V4_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                <TextField fx:id="V4_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                <TextField fx:id="V4_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+                <TextField fx:id="V4_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+                <TextField fx:id="AVR_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                <TextField fx:id="AVL_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                <TextField fx:id="AVF_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                <TextField fx:id="V1_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                <TextField fx:id="V2_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                <TextField fx:id="V3_R1" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                <TextField fx:id="V3_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                <TextField fx:id="V3_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+                <TextField fx:id="V3_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+                <TextField fx:id="V2_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                <TextField fx:id="V2_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                <TextField fx:id="V2_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                <TextField fx:id="V1_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                <TextField fx:id="V1_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                <TextField fx:id="V1_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+                <TextField fx:id="AVF_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                <TextField fx:id="AVF_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                <TextField fx:id="AVF_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+                <TextField disable="true" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                <TextField fx:id="AVL_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                <TextField fx:id="AVR_S" disable="true" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                <TextField fx:id="AVL_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                <TextField fx:id="AVL_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+                <TextField fx:id="AVR_Tplus" disable="true" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                <TextField fx:id="III_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+                <TextField fx:id="AVR_Tminus" disable="true" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+      <GridPane layoutX="422.0" layoutY="40.0" prefHeight="123.0" prefWidth="175.0" styleClass="card-subtitle">
+         <children>
+            <Label text="Рост:" />
+            <Label text="Вес:" GridPane.rowIndex="1" />
+            <Label text="Пол:" GridPane.rowIndex="2" />
+            <TextField fx:id="growthField" prefHeight="100.0" prefWidth="208.0" promptText="см" GridPane.columnIndex="1" />
+            <TextField fx:id="weightField" prefHeight="44.0" prefWidth="211.0" promptText="кг" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="genderChoiceBox" prefHeight="37.0" prefWidth="131.0" styleClass="cancel-button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="82.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="93.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+    </children>
+   <effect>
+      <GaussianBlur radius="0.0" />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="461.0" stylesheets="@style/style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kasad0r.GUI.listFromBDController">
+   <children>
+      <TableView fx:id="tableDb" onMouseClicked="#pressedElementBdFromTable" prefHeight="400.0" prefWidth="412.0" styleClass="table-column">
+        <columns>
+          <TableColumn fx:id="FullnameTableColumn" prefWidth="151.0" text="Ф.И.О" />
+          <TableColumn fx:id="BirthDayTableColumn" prefWidth="138.0" text="Год рождения" />
+            <TableColumn fx:id="dateAnalisTableColumn" prefWidth="122.0" text="День анализа" />
+        </columns>
+      </TableView>
+      <TextField fx:id="WhatToSearchTextField" layoutX="415.0" layoutY="132.0" prefHeight="35.0" prefWidth="100.0" styleClass="card-subtitle" stylesheets="@style/style1.css" />
+      <Button fx:id="buttonSearch" layoutX="415.0" layoutY="176.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="100.0" styleClass="drawer-buttons" stylesheets="@style/style1.css" text="Поиск" />
+      <ChoiceBox fx:id="searchCharacteristic" layoutX="415.0" layoutY="86.0" prefHeight="37.0" prefWidth="116.0" styleClass="cancel-button" />
+      <Label layoutX="418.0" layoutY="57.0" prefHeight="21.0" prefWidth="100.0" text="Поиск по:" />
+   </children>
+</AnchorPane>

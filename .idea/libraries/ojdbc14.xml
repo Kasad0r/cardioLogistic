@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="ojdbc14">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/jdbcDrivers/ojdbc14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jdbcDrivers/sqlite-jdbc-3.21.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jdbcDrivers/postgresql-42.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jdbcDrivers/mysql-connector-java-5.1.44-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

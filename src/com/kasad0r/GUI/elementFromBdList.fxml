@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="464.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kasad0r.GUI.ElementFromBdList">
+   <children>
+      <GridPane layoutX="7.0" prefHeight="123.0" prefWidth="316.0" styleClass="card-subtitle">
+         <children>
+            <Label text="ФИО" />
+            <Label text="Дата:" GridPane.rowIndex="1" />
+            <Label text="Дата рождения:" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dateAnalysis" editable="false" prefHeight="31.0" prefWidth="257.0" styleClass="jfx-hamburger" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="FullName" editable="false" prefHeight="31.0" prefWidth="150.0" promptText="А.А Васильев" styleClass="resize-border" GridPane.columnIndex="1" />
+            <DatePicker fx:id="BirthdayDate" editable="false" prefHeight="31.0" prefWidth="350.0" styleClass="jfx-hamburger" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="122.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="194.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane alignment="TOP_RIGHT" layoutX="7.0" layoutY="134.0" prefHeight="317.0" prefWidth="316.0" styleClass="card-subtitle">
+         <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="R-R:" GridPane.rowIndex="2" />
+            <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="P-Q:" GridPane.rowIndex="3" />
+            <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="Q-T:" GridPane.rowIndex="4" />
+            <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="P:" GridPane.rowIndex="5" />
+            <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="QRS:" GridPane.rowIndex="6" />
+            <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="ЧСС:" GridPane.rowIndex="7" />
+            <TextField fx:id="RR" editable="false" prefHeight="95.0" prefWidth="109.0" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="PQ" prefHeight="0.0" prefWidth="109.0" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="QT" editable="false" prefHeight="38.0" prefWidth="153.0" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="P" editable="false" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="QRS" editable="false" promptText="c" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="heartRate" editable="false" promptText="уд/мин" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Систематичечкий показатель:" GridPane.rowIndex="8" />
+            <Label text="Угол отклонения ЭОС:" />
+            <Label prefHeight="29.0" prefWidth="284.0" text="Колебания прод. интрвла R-R:" GridPane.rowIndex="1" />
+            <TextField fx:id="systematicIndicator" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="intervalRR" editable="false" promptText="\%" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="angleDeviationEOS" editable="false" prefHeight="51.0" prefWidth="138.0" promptText="град." GridPane.columnIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="223.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="159.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="347.0" prefHeight="123.0" prefWidth="175.0" styleClass="card-subtitle">
+         <children>
+            <Label text="Рост:" />
+            <Label text="Вес:" GridPane.rowIndex="1" />
+            <Label text="Пол:" GridPane.rowIndex="2" />
+            <TextField fx:id="growthField" editable="false" prefHeight="100.0" prefWidth="208.0" promptText="см" GridPane.columnIndex="1" />
+            <TextField fx:id="weightField" editable="false" prefHeight="44.0" prefWidth="211.0" promptText="кг" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="genderChoiceBox" disable="true" prefHeight="37.0" prefWidth="131.0" styleClass="cancel-button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="82.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="93.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <TextArea editable="false" layoutX="331.0" layoutY="239.0" prefHeight="212.0" prefWidth="352.0" />
+   </children>
+</AnchorPane>
