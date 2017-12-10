@@ -15,7 +15,7 @@ public class ECGCharacteristic {
     @Column(name = "id")
     private long id;
     @Column(name = "fullname")
-    private String fullName;
+   private String fullName;
     @Column(name = "growth")
     private double growth;
     @Column(name = "weight")

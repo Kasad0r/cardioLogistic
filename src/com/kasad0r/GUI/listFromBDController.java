@@ -18,40 +18,34 @@ import java.time.LocalDate;
 public class listFromBDController {
     private ObservableList<ECGCharacteristic> usersData = FXCollections.observableArrayList();
     @FXML
-    private TableColumn<ECGCharacteristic, LocalDate> BirthDayTableColumn;
-
-    @FXML
-    private Button buttonSearch;
+    private TableColumn<ECGCharacteristic, String> BirthDayTableColumn;
 
     @FXML
     private TextField WhatToSearchTextField;
 
     @FXML
-    private TableColumn<ECGCharacteristic, String> FullnameTableColumn;
+    private TableColumn<ECGCharacteristic,String> FullnameTableColumn;
 
     @FXML
     private TableView<ECGCharacteristic> tableDb;
 
     @FXML
-    private ChoiceBox<?> searchCharacteristic;
-
-    @FXML
     private TableColumn<ECGCharacteristic, LocalDate> dateAnalisTableColumn;
+    public listFromBDController(){
+        Date date = new Date(19991021);
+        usersData.add(new ECGCharacteristic("Dmitryy Pronyakin", date.toLocalDate(), date.toLocalDate()));
+    }
 
     @FXML
     private void initialize() {
-        searchCharacteristic =new ChoiceBox<>(FXCollections.observableArrayList("Фамилия", "Дата рождения","Дата Анализа"));
-        System.out.println(searchCharacteristic.toString());
         initData();
         BirthDayTableColumn = new TableColumn<>("birthdayDate");
         dateAnalisTableColumn = new TableColumn<>("dateAnalysis");
         FullnameTableColumn.setCellValueFactory(new PropertyValueFactory<>("fullname"));
-        tableDb.setItems(usersData);
     }
 
     private void initData() {
-        Date date = new Date(19991021);
-        usersData.add(new ECGCharacteristic("Dmitryy Pronyakin", date.toLocalDate(), date.toLocalDate()));
+
     }
 
 

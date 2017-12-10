@@ -1,4 +1,4 @@
-package com.kasad0r.GUI;
+package com.kasad0r;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

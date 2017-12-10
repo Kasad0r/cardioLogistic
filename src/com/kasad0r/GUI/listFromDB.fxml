@@ -1,23 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="461.0" stylesheets="@style/style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kasad0r.GUI.listFromBDController">
+<AnchorPane prefHeight="594.0" prefWidth="1192.0" stylesheets="@style/style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kasad0r.GUI.listFromBDController">
    <children>
-      <TableView fx:id="tableDb" onMouseClicked="#pressedElementBdFromTable" prefHeight="400.0" prefWidth="412.0" styleClass="table-column">
+      <TableView fx:id="tableDb" onMouseClicked="#pressedElementBdFromTable" prefHeight="540.0" prefWidth="412.0" styleClass="table-column">
         <columns>
           <TableColumn fx:id="FullnameTableColumn" prefWidth="151.0" text="Ф.И.О" />
           <TableColumn fx:id="BirthDayTableColumn" prefWidth="138.0" text="Год рождения" />
             <TableColumn fx:id="dateAnalisTableColumn" prefWidth="122.0" text="День анализа" />
         </columns>
       </TableView>
-      <TextField fx:id="WhatToSearchTextField" layoutX="415.0" layoutY="132.0" prefHeight="35.0" prefWidth="100.0" styleClass="card-subtitle" stylesheets="@style/style1.css" />
-      <Button fx:id="buttonSearch" layoutX="415.0" layoutY="176.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="100.0" styleClass="drawer-buttons" stylesheets="@style/style1.css" text="Поиск" />
-      <ChoiceBox fx:id="searchCharacteristic" layoutX="415.0" layoutY="86.0" prefHeight="37.0" prefWidth="116.0" styleClass="cancel-button" />
-      <Label layoutX="418.0" layoutY="57.0" prefHeight="21.0" prefWidth="100.0" text="Поиск по:" />
+      <TextField fx:id="WhatToSearchTextField" layoutX="117.0" layoutY="543.0" prefHeight="43.0" prefWidth="296.0" styleClass="card-subtitle" stylesheets="@style/style1.css" />
+      <Label layoutY="547.0" prefHeight="35.0" prefWidth="117.0" text="Поиск по:">
+         <font>
+            <Font size="23.0" />
+         </font></Label>
+      <AnchorPane layoutX="414.0" layoutY="8.0" prefHeight="584.0" prefWidth="778.0">
+         <children>
+            <GridPane layoutX="14.0" layoutY="456.0" prefHeight="123.0" prefWidth="316.0" styleClass="card-subtitle">
+               <children>
+                  <Label text="ФИО" />
+                  <Label text="Дата:" GridPane.rowIndex="1" />
+                  <Label text="Дата рождения:" GridPane.rowIndex="2" />
+                  <Label fx:id="labelDate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="labelBirthdayDate" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="labelFullName" GridPane.columnIndex="1" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="122.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="194.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane alignment="TOP_RIGHT" layoutX="14.0" layoutY="14.0" prefHeight="317.0" prefWidth="316.0" styleClass="card-subtitle">
+               <children>
+                  <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="R-R:" GridPane.rowIndex="2" />
+                  <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="P-Q:" GridPane.rowIndex="3" />
+                  <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="Q-T:" GridPane.rowIndex="4" />
+                  <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="P:" GridPane.rowIndex="5" />
+                  <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="QRS:" GridPane.rowIndex="6" />
+                  <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="ЧСС:" GridPane.rowIndex="7" />
+                  <Label text="Систематичечкий показатель:" GridPane.rowIndex="8" />
+                  <Label text="Угол отклонения ЭОС:" />
+                  <Label prefHeight="29.0" prefWidth="284.0" text="Колебания прод. интрвла R-R:" GridPane.rowIndex="1" />
+                  <Label fx:id="labelAngleOfDeflection" GridPane.columnIndex="1" />
+                  <Label fx:id="labelFluctuationsDurationIntervals" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="labelRR" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="labelPQ" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="labelQT" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="labelP" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="labelQRS" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="labelHeartRate" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label fx:id="labelSystematicIndicator" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="223.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="159.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane layoutX="14.0" layoutY="333.0" prefHeight="123.0" prefWidth="175.0" styleClass="card-subtitle">
+               <children>
+                  <Label text="Рост:" />
+                  <Label text="Вес:" GridPane.rowIndex="1" />
+                  <Label text="Пол:" GridPane.rowIndex="2" />
+                  <Label fx:id="labelHeight" GridPane.columnIndex="1" />
+                  <Label fx:id="labelWeight" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="labelSex" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="82.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="93.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <TextArea fx:id="textArea" editable="false" layoutX="330.0" layoutY="-5.0" prefHeight="584.0" prefWidth="448.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -4,6 +4,7 @@ import com.kasad0r.Entity.AmplitudeElement;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -19,7 +20,8 @@ import java.util.List;
 @Getter
 @Setter
 public class generalMenuController implements Serializable {
-
+    ObservableList<String> sexList = FXCollections.observableArrayList("М", "Ж");
+    public MenuItem MenuItemClose;
     @FXML
     MenuItem MenuItemListFromDB;
     @FXML
@@ -398,7 +400,7 @@ public class generalMenuController implements Serializable {
     private TextField AVF_Q;
 
     @FXML
-    private ChoiceBox<?> genderChoiceBox;
+    private ChoiceBox<String> genderChoiceBox;
 
     @FXML
     private TextField growthField;
@@ -406,9 +408,9 @@ public class generalMenuController implements Serializable {
     @FXML
     private TextField weightField;
 
-    {
-        genderChoiceBox = new ChoiceBox<>(FXCollections.observableArrayList("М", "Ж"));
-        genderChoiceBox.show();
+    @FXML
+    private void initialize() {
+        genderChoiceBox.setItems(sexList);
     }
 
     public AmplitudeElement getAmplitudePPlusElement() {
